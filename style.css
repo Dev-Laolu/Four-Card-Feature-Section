@@ -1,0 +1,139 @@
+:root {
+  --primary-red: hsl(0, 78%, 62%);
+  --primary-cyan: hsl(180, 62%, 55%);
+  --primary-orange: hsl(34, 97%, 64%);
+  --primary-blue: hsl(212, 86%, 64%);
+  --neutral-dark-blue: hsl(234, 12%, 34%);
+  --neutral-gray-blue: hsl(229, 6%, 66%);
+  --neutral-light-gray: hsl(0, 0%, 98%);
+  
+  --fw-light: 200;
+  --fw-regular: 400;
+  --fw-bold: 600;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  background-color: var(--neutral-light-gray);
+  color: var(--neutral-dark-blue);
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 1110px;
+  margin: 0 auto;
+  padding: 50px 25px;
+}
+
+header {
+  text-align: center;
+  max-width: 540px;
+  margin: 0 auto 64px;
+}
+
+h1 {
+  font-weight: var(--fw-light);
+  font-size: 24px;
+  margin-bottom: 0;
+  color: var(--neutral-dark-blue);
+}
+
+h1 strong {
+  display: block;
+  font-weight: var(--fw-bold);
+  margin-top: 5px;
+}
+
+header p {
+  color: var(--neutral-gray-blue);
+  line-height: 1.6;
+  margin-top: 16px;
+}
+
+.features-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 28px;
+  box-shadow: 0 15px 30px -11px rgba(131, 166, 210, 0.5);
+  position: relative;
+  overflow: hidden;
+  border-top: 4px solid transparent;
+}
+
+.card-cyan { border-top-color: var(--primary-cyan); }
+.card-red { border-top-color: var(--primary-red); }
+.card-orange { border-top-color: var(--primary-orange); }
+.card-blue { border-top-color: var(--primary-blue); }
+
+.card h2 {
+  font-size: 20px;
+  font-weight: var(--fw-bold);
+  margin: 0 0 10px;
+  color: var(--neutral-dark-blue);
+}
+
+.card p {
+  color: var(--neutral-gray-blue);
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 0 0 30px;
+}
+
+.card img {
+  display: block;
+  margin-left: auto;
+}
+
+@media (min-width: 1024px) {
+  h1 { font-size: 36px; }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 30px;
+    align-items: center;
+  }
+  
+  .card-cyan {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+  
+  .card-red {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  
+  .card-orange {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  
+  .card-blue {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+  }
+}
+
+.attribution { 
+    margin-top: 20px;
+    font-size: 11px; text-align: center; 
+}
+.attribution a { color: hsl(228, 45%, 44%); }
